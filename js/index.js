@@ -36,24 +36,26 @@ function startGame() {
   // Invoke shuffle function and store in variable
   const shuffledDeck = shuffle(deckCards);
   // Implement a for loop on the shuffledDeck array
-  
+  //for loop
+  // for ( starting condition;  stopping condition; increment or decrement)
+  for (let i = 0; i < shuffledDeck.length; i++) {
     // Create the <td> tags and assign it to a variable called tdTag
-    
+    const tdTag = document.createElement('td'); 
     // Give tdTag Element a class of card
-    
+    tdTag.classList.add('card');
     // Create the <img> tag and assign it to an addImage variable
-    
+    var addImage = document.createElement('img');
     // make the addImage a child of the tdTag
-    
+    tdTag.appendChild(addImage);
     // Set the addImage element src path with the shuffled deck
     // TODO: replace the REPLACE ME string with the element in the shuffledDeck array at index i
-    addImage.setAttribute('src', 'img/' + 'REPLACE ME with the element in shuffleDeck at index i');
+    addImage.setAttribute('src', 'img/' + shuffledDeck[i]);
     // Add an alt tag to the addImage element
     addImage.setAttribute('alt', 'image of vault boy from fallout');
     // make the tdTag element a child of the deck element
-    
+    deck.appendChild(tdTag);
+  }
 }
-
 startGame();
 
 function removeCard() {
@@ -131,6 +133,13 @@ function compareTwo() {
     document.body.style.pointerEvents = "none";
   }
   // Compare the two images src in the opened array
+  if (opened.length[0] == opened[1]) {
+    displayMatchingCards ();
+    console.log("It's a Match");
+    
+  }
+    
+  }
   // TODO: implement
   // if the opened array has a length of two && the element at index = 0 src string
   // equals the element at index 1 src string
@@ -145,7 +154,7 @@ function compareTwo() {
     // TODO: invoke the displayNotMatchingCards()
     // TODO: console log "No Match!"
   
-}
+
 
 // TODO:
 function displayMatchingCards() {
@@ -155,14 +164,15 @@ function displayMatchingCards() {
   setTimeout(function() {
     // add the match class (Why are we adding it to the parentElement?)
       // the match class should make the img visible
-    opened[0].parentElement.classList.add("match");
-    opened[1].parentElement.classList.add("match");
+      opened[0].parentElement.classList.add("match");
+      opened[1].parentElement.classList.add("match");  
     // TODO: Push the flipped cards (opened[0] and opened[1]) to the matched array
-    
+    matched.push(opened[0])
+    matched.push(opened[1])
     // Allow for further mouse clicks on cards
     document.body.style.pointerEvents = "auto";
     // TODO: invoke the checkIsGameFinished function
-    
+    checkIsGameFinished()
    
     // Clear the opened array
     opened = [];
@@ -199,7 +209,7 @@ function addStatsToModal() {
     
     // Add a class to the new Paragraph
     // TODO: add the stats class to the statsElement
-    
+    // <p var = {statsElement} class="p.stats"></p>;
     
     // Add the new created <p> tag to the modal content
     // TODO: add the statsElement as a child of the statsParent element

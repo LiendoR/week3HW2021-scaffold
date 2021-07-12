@@ -88,6 +88,7 @@ function displayMatchingCards() {
       // the match class should make the img visible
     opened[0].parentElement.classList.add("match");
     opened[1].parentElement.classList.add("match");
+
     // TODO: Push the flipped cards (opened[0] and opened[1]) to the matched array
     matched.push(opened[0])
     matched.push(opened[1])

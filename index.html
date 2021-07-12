@@ -6,41 +6,48 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fallout Memory Game</title>
-    <!-- TODO: Connect the given styles file to this HTML -->
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h1>Memory Game</h1>
-            <h2>FallOut Edition</h2>
-        </header>
-
-        <section class="score-panel">
-            <h3>Score Panel</h3>
-        <ul id="star-rating" class="star-rating">
-            <li class="star"><i class="fa fa-star"></i></li>
-            <li class="star"><i class="fa fa-star"></i></li>
-            <li class="star"><i class="fa fa-star"></i></li>
-            </ul>
-            <span class="moves-counter">0</span> Moves
-            <div class="timer-container">
-                <span class="timer"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
-            </div>
-            <div class="reset">
-                <button class="btn reset-btn">Reset <i class="fa fa-repeat"></i></button>
-            </div>
-        </section>
-        <!-- Modal section-->
+    <header class="header">
+        <h1>Memory Game</h1>
+        <h2>FallOut Edition</h2>
+    </header>
+    <section class="score-panel">
+        <h3>Score Panel</h3>
+       <ul id="star-rating" class="star-rating">
+           <li class="star"><i class="fa fa-star"></i></li>
+           <li class="star"><i class="fa fa-star"></i></li>
+          <li class="star"><i class="fa fa-star"></i></li>
+       </ul>
+        <span class="moves-counter">0</span> Moves
+        <div class="timer-container">
+            <span class="timer"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
+        </div>
+        <div class="reset">
+            <button class="btn reset-btn">Reset <i class="fa fa-repeat"></i></button>
+        </div>
+    </section>
+    <!-- Modal section-->
+<!--    <ul class="deck"></ul>-->
         <table>
             <tr class="deck"></tr>
         </table>
-    </div>
-
+</div>
     <!-- Modal -->
     <section class="win-game-modal">
-        
+        <div id="modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="close">&times;</span>
+                <h2>Congratulations!</h2>
+                <p>You have won the game and found all 8 pairs of cards.</p>
+                <img class="modal-img" src="img/Vault-Boy-Thumb-Up.jpg" alt="Vault boy giving the thumbs up from the game fall out">
+                <button class="btn play-again-btn">Play Again?</button>
+            </div>
+        </div>
     </section>
-
-    <!-- TODO: Connect the given JS file to your HTML -->
+    <script src="./js/index.js"></script>
 </body>
 </html>
